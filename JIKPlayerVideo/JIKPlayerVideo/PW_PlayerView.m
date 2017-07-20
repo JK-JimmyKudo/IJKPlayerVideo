@@ -37,6 +37,7 @@
 
 @property (nonatomic,strong) PW_PlayView *playView;
 
+
 @end
 
 @implementation PW_PlayerView
@@ -107,6 +108,20 @@
     backBtn.layer.shadowOpacity = 0.5;
     backBtn.layer.shadowRadius = 1;
     [self addSubview:backBtn];
+    
+    
+    
+    _fullBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _fullBtn.backgroundColor = [UIColor clearColor];
+    [_fullBtn setImage:[UIImage imageNamed:@"icon_full"] forState:UIControlStateNormal];
+    [_fullBtn setImageEdgeInsets:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
+    _fullBtn.frame = CGRectMake(100, 10, 50, 50);
+    [self addSubview:_fullBtn];
+
+    
+    
+    
+    
     
     [self addSubview:self.playView];
     [self addSubview:self.brightnessV];
@@ -458,4 +473,8 @@
         WeakSelf.backBlock();
     }
 }
+
+
+
+
 @end

@@ -54,6 +54,10 @@ static BOOL  change = YES;
         
         UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick)];
         [self addGestureRecognizer:tapGes];
+        
+        
+        [self.pw_playView.fullBtn addTarget:self action:@selector(fullBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+
     }
 
 
@@ -425,5 +429,45 @@ static BOOL  change = YES;
     
     
 }
+
+
+#pragma mark----屏幕手动旋转
+- (void)fullBtnClicked:(UIButton *)sender{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (orientation == UIInterfaceOrientationPortrait) {
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationLandscapeRight;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }else if (orientation  == UIInterfaceOrientationLandscapeLeft){
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }else if (orientation  == UIInterfaceOrientationPortraitUpsideDown){
+        
+    }else if (orientation  == UIInterfaceOrientationLandscapeRight){
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }
+}
+
 
 @end

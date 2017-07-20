@@ -50,7 +50,7 @@
         
        //进度条
         self.slider = [[UISlider alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.playDurationLabel.frame), Y, ([UIScreen mainScreen].bounds.size.width - CGRectGetMaxX(self.playDurationLabel.frame) - 90), H)];
-        [self.slider setThumbImage:[UIImage imageNamed:@"BFJinDuTiao"] forState:UIControlStateNormal];
+        [self.slider setThumbImage:[UIImage imageNamed:@"icon_progress"] forState:UIControlStateNormal];
         self.slider.minimumTrackTintColor=[UIColor orangeColor];
         [self addSubview:self.slider];
         

@@ -50,6 +50,7 @@ typedef void(^BackButtonBlock)();
 @property (nonatomic,copy) NSString *playableDuration;
 
 
+@property (nonatomic, strong) UIButton       *fullBtn;
 
 
 -(void) backButtonBlock:(BackButtonBlock) backBlock;

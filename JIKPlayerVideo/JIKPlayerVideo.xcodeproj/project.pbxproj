@@ -33,6 +33,7 @@
 		08F206481E72541D00A3C085 /* PW_PlayerVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F206471E72541D00A3C085 /* PW_PlayerVideoView.m */; };
 		08F206561E72783A00A3C085 /* PW_PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F206551E72783A00A3C085 /* PW_PlayerView.m */; };
 		6FD6BF021F209FA700D3E99C /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD6BF011F209FA700D3E99C /* IJKMediaFramework.framework */; };
+		6FD6BF081F20BDE500D3E99C /* UIDevice+XJDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6BF071F20BDE500D3E99C /* UIDevice+XJDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		08F206541E72783A00A3C085 /* PW_PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PW_PlayerView.h; sourceTree = "<group>"; };
 		08F206551E72783A00A3C085 /* PW_PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PW_PlayerView.m; sourceTree = "<group>"; };
 		6FD6BF011F209FA700D3E99C /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		6FD6BF061F20BDE500D3E99C /* UIDevice+XJDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+XJDevice.h"; sourceTree = "<group>"; };
+		6FD6BF071F20BDE500D3E99C /* UIDevice+XJDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+XJDevice.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 		08F2060E1E7251D500A3C085 /* JIKPlayerVideo */ = {
 			isa = PBXGroup;
 			children = (
+				6FD6BF051F20BDE500D3E99C /* 强制旋转 */,
 				08F206531E72781300A3C085 /* VideoPlayer */,
 				08F206121E7251D500A3C085 /* AppDelegate.h */,
 				08F206131E7251D500A3C085 /* AppDelegate.m */,
@@ -179,6 +183,15 @@
 				08B9A4651E72807800B5D97A /* PW_ProgressView.m */,
 			);
 			name = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		6FD6BF051F20BDE500D3E99C /* 强制旋转 */ = {
+			isa = PBXGroup;
+			children = (
+				6FD6BF061F20BDE500D3E99C /* UIDevice+XJDevice.h */,
+				6FD6BF071F20BDE500D3E99C /* UIDevice+XJDevice.m */,
+			);
+			path = "强制旋转";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +275,7 @@
 				08F206451E7252A200A3C085 /* PW_ViewController.m in Sources */,
 				08B9A46C1E72A3D300B5D97A /* PW_PlayView.m in Sources */,
 				08F206481E72541D00A3C085 /* PW_PlayerVideoView.m in Sources */,
+				6FD6BF081F20BDE500D3E99C /* UIDevice+XJDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
