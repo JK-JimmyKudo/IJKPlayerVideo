@@ -31,11 +31,11 @@ typedef NS_ENUM(NSInteger, IJKMPMovieScalingMode) {
 };
 
 typedef NS_ENUM(NSInteger, IJKMPMoviePlaybackState) {
-    IJKMPMoviePlaybackStateStopped,//播放停止状态
-    IJKMPMoviePlaybackStatePlaying,//播放状态
-    IJKMPMoviePlaybackStatePaused,//回放状态停顿了一下
-    IJKMPMoviePlaybackStateInterrupted,//中断状态
-    IJKMPMoviePlaybackStateSeekingForward,//状态向前寻找
+    IJKMPMoviePlaybackStateStopped,
+    IJKMPMoviePlaybackStatePlaying,
+    IJKMPMoviePlaybackStatePaused,
+    IJKMPMoviePlaybackStateInterrupted,
+    IJKMPMoviePlaybackStateSeekingForward,
     IJKMPMoviePlaybackStateSeekingBackward
 };
 
@@ -75,13 +75,9 @@ typedef NS_ENUM(NSInteger, IJKMPMovieTimeOption) {
 - (void)setPauseInBackground:(BOOL)pause;
 
 @property(nonatomic, readonly)  UIView *view;
-//当前播放时间
 @property(nonatomic)            NSTimeInterval currentPlaybackTime;
-//持续时间
 @property(nonatomic, readonly)  NSTimeInterval duration;
-//播放时间
 @property(nonatomic, readonly)  NSTimeInterval playableDuration;
-//缓冲的进展
 @property(nonatomic, readonly)  NSInteger bufferingProgress;
 
 @property(nonatomic, readonly)  BOOL isPreparedToPlay;

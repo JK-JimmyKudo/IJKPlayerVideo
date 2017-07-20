@@ -220,7 +220,7 @@
     }
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
-    [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(refreshMediaControl) withObject:nil afterDelay:1];
     
 }
 

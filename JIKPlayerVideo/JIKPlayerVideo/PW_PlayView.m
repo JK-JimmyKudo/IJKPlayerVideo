@@ -32,7 +32,6 @@
         self.playButton.layer.shadowRadius = 1;
         [self addSubview:self.playButton];
 
-        
         //播放时间
         self.playDurationLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.playButton.frame) + 5,Y, 90, H)];
         
@@ -54,9 +53,11 @@
         [self.slider setThumbImage:[UIImage imageNamed:@"BFJinDuTiao"] forState:UIControlStateNormal];
         self.slider.minimumTrackTintColor=[UIColor orangeColor];
         [self addSubview:self.slider];
-
+        
         
     }
     return self;
 }
+
+
 @end

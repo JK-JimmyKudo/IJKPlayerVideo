@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		EvDyke3RPR+4GZyfFPohd/dN1r4=
+		</data>
 		<key>Headers/IJKAVMoviePlayerController.h</key>
 		<data>
 		NBoWPxeruGytRXi/mYzEqgc56Sg=
@@ -50,7 +54,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cS8/hQvWqcz10gcYX070I83DMz8=
+		R5ZZJYoRMIwmDrFV8apmrgbBneE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -210,6 +214,11 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>
@@ -254,6 +263,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

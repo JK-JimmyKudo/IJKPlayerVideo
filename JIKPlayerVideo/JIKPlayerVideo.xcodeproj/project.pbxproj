@@ -16,7 +16,6 @@
 		08F2061A1E7251D500A3C085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F206181E7251D500A3C085 /* Main.storyboard */; };
 		08F2061C1E7251D500A3C085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F2061B1E7251D500A3C085 /* Assets.xcassets */; };
 		08F2061F1E7251D500A3C085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F2061D1E7251D500A3C085 /* LaunchScreen.storyboard */; };
-		08F206271E7251F300A3C085 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F206261E7251F300A3C085 /* IJKMediaFramework.framework */; };
 		08F2062A1E72522100A3C085 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F206291E72522100A3C085 /* AudioToolbox.framework */; };
 		08F2062C1E72523700A3C085 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F2062B1E72523700A3C085 /* AVFoundation.framework */; };
 		08F2062E1E72523F00A3C085 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F2062D1E72523F00A3C085 /* CoreGraphics.framework */; };
@@ -33,6 +32,7 @@
 		08F206451E7252A200A3C085 /* PW_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F206441E7252A200A3C085 /* PW_ViewController.m */; };
 		08F206481E72541D00A3C085 /* PW_PlayerVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F206471E72541D00A3C085 /* PW_PlayerVideoView.m */; };
 		08F206561E72783A00A3C085 /* PW_PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F206551E72783A00A3C085 /* PW_PlayerView.m */; };
+		6FD6BF021F209FA700D3E99C /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD6BF011F209FA700D3E99C /* IJKMediaFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		08F2061B1E7251D500A3C085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F2061E1E7251D500A3C085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08F206201E7251D500A3C085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08F206261E7251F300A3C085 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		08F206291E72522100A3C085 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		08F2062B1E72523700A3C085 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		08F2062D1E72523F00A3C085 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +71,7 @@
 		08F206471E72541D00A3C085 /* PW_PlayerVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PW_PlayerVideoView.m; sourceTree = "<group>"; };
 		08F206541E72783A00A3C085 /* PW_PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PW_PlayerView.h; sourceTree = "<group>"; };
 		08F206551E72783A00A3C085 /* PW_PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PW_PlayerView.m; sourceTree = "<group>"; };
+		6FD6BF011F209FA700D3E99C /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 				08F2062E1E72523F00A3C085 /* CoreGraphics.framework in Frameworks */,
 				08F2062C1E72523700A3C085 /* AVFoundation.framework in Frameworks */,
 				08F2062A1E72522100A3C085 /* AudioToolbox.framework in Frameworks */,
-				08F206271E7251F300A3C085 /* IJKMediaFramework.framework in Frameworks */,
+				6FD6BF021F209FA700D3E99C /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +124,7 @@
 				08F206131E7251D500A3C085 /* AppDelegate.m */,
 				08F206151E7251D500A3C085 /* ViewController.h */,
 				08F206161E7251D500A3C085 /* ViewController.m */,
-				08F206261E7251F300A3C085 /* IJKMediaFramework.framework */,
+				6FD6BF011F209FA700D3E99C /* IJKMediaFramework.framework */,
 				08F206181E7251D500A3C085 /* Main.storyboard */,
 				08F2061B1E7251D500A3C085 /* Assets.xcassets */,
 				08F2061D1E7251D500A3C085 /* LaunchScreen.storyboard */,

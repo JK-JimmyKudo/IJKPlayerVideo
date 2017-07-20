@@ -5,6 +5,8 @@
 //  Created by DFSJ on 17/3/10.
 //  Copyright © 2017年 Oriental Horizon. All rights reserved.
 //
+#define kScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight  [UIScreen mainScreen].bounds.size.height
 
 #import "PW_PlayerVideoView.h"
 #import "PW_PlayerView.h"
@@ -32,6 +34,8 @@
 
 @end
 
+static BOOL  change = YES;
+
 @implementation PW_PlayerVideoView
 
 -(instancetype)initWithFrame:(CGRect)frame URL:(NSURL *)url title:(NSString *)title{
@@ -39,16 +43,50 @@
 
     if (self = [super initWithFrame:frame]) {
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
         // 播放视频
         [self goPlaying:url];
         // 创建按钮
         [self setupBtn];
+        
+        [self AttemptingGradient];
+        
+        
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick)];
+        [self addGestureRecognizer:tapGes];
     }
 
 
     return self;
 }
+
+
+-(void)tapClick{
+    
+    if (change) {
+        
+        
+        [UIView animateWithDuration:2 delay:1 options:UIViewAnimationOptionOverrideInheritedOptions animations:^{
+            self.pw_playView.hidden = change;
+            change = !change;
+            
+        } completion:nil];
+        
+        
+    }else{
+       
+        [UIView animateWithDuration:1 delay:1 options:UIViewAnimationOptionOverrideInheritedOptions animations:^{
+            
+            self.pw_playView.hidden = change;
+            change = !change;
+            
+        } completion:nil];
+    }
+}
+
+
+
+
 - (void)goPlaying:(NSURL *)url{
     
     // 设置Log信息打印
@@ -84,14 +122,28 @@
     // 开启通知
     [self installMovieNotificationObservers];
     [self PlayVideoAnimated];
+    
+    [self performSelector:@selector(hide) withObject:nil afterDelay:5];
 }
 
+- (void)hide
+{
+    self.pw_playView.hidden = YES;
+    change = !change;
+    [self cancelDelayedHide];
+}
+
+- (void)cancelDelayedHide
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hide) object:nil];
+}
 
 - (void)setupBtn {
     
     self.pw_playView = [[PW_PlayerView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width , self.bounds.size.height)];
     
     [self addSubview:self.pw_playView];
+    
     self.pw_playView.delegatePlayer = self.player;
     
     [self.pw_playView backButtonBlock:^{
@@ -337,6 +389,41 @@
         [self addSubview:_activity];
     }
     return _activity;
+}
+
+
+- (void)AttemptingGradient{
+    
+    CGFloat width,height;
+    width = kScreenWidth>kScreenHeight?kScreenWidth:kScreenHeight;
+    height = kScreenWidth>kScreenHeight?kScreenHeight:kScreenWidth;
+    
+    UIColor *colorOne = [UIColor clearColor];
+    UIColor *colorTwo = [[UIColor blackColor]colorWithAlphaComponent: 0.85];
+    NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor,  nil];
+    NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+    CAGradientLayer *headerLayer = [CAGradientLayer layer];
+    headerLayer.colors = colors;
+    headerLayer.locations = locations;
+    headerLayer.frame = CGRectMake(0, self.PlayerView.bounds.size.height - 50, self.pw_playView.frame.size.width, 50);
+    
+    
+    NSArray *colors1 = [NSArray arrayWithObjects:(id)colorTwo.CGColor, colorOne.CGColor,  nil];
+    NSNumber *stopOne1 = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo1 = [NSNumber numberWithFloat:1.0];
+    NSArray *locations1 = [NSArray arrayWithObjects:stopOne1, stopTwo1, nil];
+    CAGradientLayer *headerLayer1 = [CAGradientLayer layer];
+    headerLayer1.colors = colors1;
+    headerLayer1.locations = locations1;
+    headerLayer1.frame = CGRectMake(0, 0, self.pw_playView.frame.size.width, 50);
+    
+    
+    [self.pw_playView.layer insertSublayer:headerLayer above:0];
+    [self.pw_playView.layer insertSublayer:headerLayer1 above:0];
+    
+    
 }
 
 @end
